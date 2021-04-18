@@ -1,34 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import styled from "styled-components";
 
-import Phone from "../Img/Phone.png";
-import Email from "../Img/email.png";
-import Instagram from "../Img/ins.png";
-import Youtube from "../Img/yt.png";
-import Twitter from "../Img/tw.png";
-import Facebook from "../Img/fb.png";
-
-import Pic1 from "../Img/Pic1.jpg";
-import Pic4 from "../Img/Chanel.jpg";
-import Pic3 from "../Img/Pic2.jpg";
-
+import Pic1 from "../Img/12.jpg";
+import Pic2 from "../Img/23.jpg";
+import Pic3 from "../Img/34.jpg";
 import Limited from "../Img/limited.png";
-
-const Contact = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 150px;
-`;
-
-const Icon = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 30vw;
-  margin: auto;
-`;
 
 const Title = styled.div`
   margin-bottom: 70px;
@@ -39,17 +16,11 @@ const Title = styled.div`
   text-align: center;
 `;
 
-const Heading = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-`;
-
 const Heading1 = styled.div`
   display: flex;
   flex-direction: table;
   justify-content: center;
-  width: 1300px;
+  width: 20rem;
 `;
 
 const Head = styled.div`
@@ -59,66 +30,47 @@ const Head = styled.div`
   }
 `;
 
-const Button = styled.div`
-  border: 2px solid black;
-  border-radius: 5px;
-  display: block;
-  padding: 0.5em;
-  &:hover {
-    background: #eac8af;
+const Name = styled.p`
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+  font-family: "Indie Flower", cursive;
+  background-color: #b4aee8;
 `;
 
 function MainPage() {
-  const [products, ] = useState(false);
-
   return (
     <div>
       <Head>
-        <Heading>
-          <Button
-            onMouseEnter={() => setOpen(true)}
-            onMouseLeave={() => setOpen(false)}
-          >
-            HOME
-          </Button>
-          <div style={{ display: open ? "block" : "none" }}>
-            <p>On Sale</p>
-            <p>All products</p>
-            <p>Bronzers</p>
-            <p>Lipstick</p>
-          </div>
-        </Heading>
         <Heading1>
           <img src={Limited} alt="error" height="70px" width="70px" />
           <Title>NEW ARRIVALS !!!</Title>
         </Heading1>
       </Head>
 
-      <Carousel>
-        <Carousel.Item interval={1000}>
+      <Carousel fade>
+        <Carousel.Item>
           <img
             className="d-block w-100"
             src={Pic1}
             alt="error"
-            height="750px"
-            width="550px"
+            height="950px"
           />
           <Carousel.Caption>
-            <h3>NARSICO</h3>
-            <p>Narciso Rodriguez Narciso Poudrée.</p>
+            <Name>GIRL DAY</Name>
+            <Name> "New collection"</Name>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item interval={500}>
+        <Carousel.Item>
           <img
             className="d-block w-100"
-            src={Pic4}
+            src={Pic2}
             alt="error"
-            height="750px"
-            width="650px"
+            height="950px"
           />
           <Carousel.Caption>
-            <h3>CHANEL</h3>
-            <p>CHANEL Coco Mademoiselle Eau de Parfum Spray</p>
+            <Name> DAY DREAMER</Name>
+            <Name>"Spring is around conner"</Name>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -126,44 +78,14 @@ function MainPage() {
             className="d-block w-100"
             src={Pic3}
             alt="error"
-            height="750px"
-            width="650px"
+            height="950px"
           />
           <Carousel.Caption>
-            <h3>ThE BODY SHOP</h3>
-            <p>The Body Shop British Rose Eau De Toilette, 100ml</p>
+            <Name>PRINCESS BELLE</Name>
+            <Name>"Beauty and the Beast"</Name>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <Contact>
-        <div>
-          <b>About </b>
-          <p>Brand</p>
-          <p>Store location</p>
-        </div>
-        <div>
-          <b>Customer care</b>
-          <p>FAQs</p>
-          <p>Shipping and return</p>
-          <p>Terms and Conditions</p>
-          <p>Privacy policy</p>
-        </div>
-        <div>
-          <div>
-            <b>Contact us</b>
-          </div>
-          <img src={Phone} alt="error" height="25px" width="25px" />
-          <p>+358 44 222 999</p>
-          <img src={Email} alt="error" height="25px" width="25px" />
-          <p>ChiuchiuStore@gmail.com</p>
-        </div>
-      </Contact>
-      <Icon>
-        <img src={Facebook} alt="error" height="25px" width="25px" />
-        <img src={Instagram} alt="error" height="25px" width="25px" />
-        <img src={Youtube} alt="error" height="25px" width="25px" />
-        <img src={Twitter} alt="error" height="25px" width="25px" />
-      </Icon>
     </div>
   );
 }
